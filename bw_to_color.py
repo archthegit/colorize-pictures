@@ -37,6 +37,8 @@ colorized = np.concatenate((L[:, :, np.newaxis], ab), axis=2)
 colorized = cv2.cvtColor(colorized, cv2.COLOR_LAB2BGR)
 colorized = np.clip(colorized, 0, 1)
 colorized = (255 * colorized).astype("uint8")
+
+cv2.imwrite('./images/colorized/output.jpg', colorized)
 cv2.imshow("Original", img)
 cv2.imshow("Colorized", colorized)
 cv2.waitKey(0)
